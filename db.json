@@ -1,0 +1,99 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "name": "sad",
+      "email": "asd",
+      "mobile": "",
+      "address": "sad",
+      "services": ""
+    },
+    {
+      "id": 3,
+      "name": "sad",
+      "email": "asd",
+      "mobile": "",
+      "address": "sad",
+      "services": ""
+    },
+    {
+      "id": 4,
+      "name": "sabin",
+      "email": "sa@w.com",
+      "mobile": 9860112638,
+      "address": "sabin",
+      "services": "momo"
+    },
+    {
+      "id": 5,
+      "name": "test",
+      "email": "test@w.com",
+      "mobile": 986,
+      "address": "test",
+      "services": "test"
+    },
+    {
+      "id": 6,
+      "name": "asdasd",
+      "email": "",
+      "mobile": "",
+      "address": "asdasd",
+      "services": ""
+    },
+    {
+      "id": 7,
+      "name": "Sabin Maharjan",
+      "email": "sabin007.maharjan@gmail.com",
+      "mobile": 9860112638,
+      "address": "Sabin Maharjan",
+      "services": "pizza and coke"
+    },
+    {
+      "id": 8,
+      "name": "test1",
+      "email": "sa@q.com",
+      "mobile": 9860112638,
+      "address": "test1",
+      "services": "pp"
+    },
+    {
+      "id": 9,
+      "name": "asd",
+      "email": "asd",
+      "mobile": 98,
+      "address": "asd",
+      "services": "asd"
+    }
+  ],
+  "signup": [
+    {
+      "name": "sa",
+      "mobile": 9860112638,
+      "email": "saasd",
+      "password": "sabiin123",
+      "id": 1
+    },
+    {
+      "name": "Sabin Maharjan",
+      "mobile": 9860112638,
+      "email": "sabin007.maharjan@gmail.com",
+      "password": "sabin123",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

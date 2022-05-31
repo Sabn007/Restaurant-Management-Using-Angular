@@ -1,0 +1,107 @@
+<nav class="navbar navbar-light bg-primary">
+
+    <div class="container-fluid">
+        <h2 class="text-white">Restaurant App</h2>
+        <div class="d-flex">
+            <button class="btn btn-success" type="button" data-toggle="modal" data-target="#exampleModal">Add
+                Restaurant</button>
+            <button class="btn btn-danger mx-2" routerLink="/login">Logout
+                </button>
+        </div>
+    </div>
+
+</nav>
+
+
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+
+        <h1 class="display-4">Restaurant Record Management</h1>
+        <p class="lead">You can save Recorss of Restaurant using angular 12</p>
+        <hr class="my-4">
+        <button class="btn btn-primary btn-lg">Learn more</button>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Table Display  -->
+
+<table class="table mt-4 mx-3">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Address</th>
+            <th scope="col">Sevices</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of allRestaurantData">
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.mobile}}</td>
+            <td>{{data.address}}</td>
+            <td>{{data.services}}</td>
+            <td>
+                <button class="btn btn-info" type="button" data-toggle="modal" data-target="#exampleModal" (click)="editRestaurantData(data)" >Edit</button>&nbsp;
+                <button class="btn btn-danger" (click)="deleteRestaurantData(data.id)">Delete</button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Name</label>
+                        <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email"  formControlName="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
+                        <input type="number" class="form-control"  formControlName="mobile"  id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Address</label>
+                        <input type="text" class="form-control"  formControlName="address"  id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Service</label>
+                        <input type="text" class="form-control"  formControlName="services"  id="exampleInputPassword1">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" (click)="addRestaurant()" class="btn btn-primary">Add Details</button>
+                <button type="button" (click)="updateRestaurant()" class="btn btn-primary">Update Details</button>
+            </div>
+        </div>
+    </div>
+</div>
