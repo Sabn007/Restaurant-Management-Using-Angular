@@ -4,6 +4,8 @@ import { Routes,RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { RestaurantDashComponent } from './restaurant-dash/restaurant-dash.component';
+import { ApiGuard } from './shared/api.guard';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const routes :Routes = [
@@ -19,7 +21,10 @@ const routes :Routes = [
     path: 'signup',component:SignupComponent
   },
   {
-    path: 'restaurant',component:RestaurantDashComponent
+    path: 'restaurant',component:RestaurantDashComponent,canActivate:[ApiGuard]
+  },
+  {
+    path: '**',component:NotFoundComponent
   },
   
 

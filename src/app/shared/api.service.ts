@@ -35,5 +35,8 @@ postRestaurant(data:any){
       return res
     }))
   } 
+ IsLoggedin(){
+   return !!localStorage.getItem('token')
+ }
   
 }

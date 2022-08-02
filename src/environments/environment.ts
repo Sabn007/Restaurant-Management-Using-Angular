@@ -5,6 +5,7 @@
 export const environment = {
   production: false
 };
+export const API_URL=  environment.production ? "/framework/api" : "https://cms.nicasialaghubitta.server247.info/framework/api/"
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -85,4 +85,7 @@ updateRestaurant(){
   this.getRestaurantData()
   })
 }
+clearLocalStorage(){
+  localStorage.clear()
+}
 }

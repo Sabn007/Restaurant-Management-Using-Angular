@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { API_URL } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ loginForm!:FormGroup
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-
+      
       email:[''],
       password:[''],
     })
@@ -22,10 +23,14 @@ loginForm!:FormGroup
 
   //login
 login(){
-  this._http.get<any>('http://localhost:3000/signup').subscribe(res=>{
-  const user = res.find((a:any)=>{
-    return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-  })
+  this._http.post<any>(API_URL + '/login' ,{
+     email:this.loginForm.value.email,
+        password:this.loginForm.value.password,
+  }).subscribe(res=>{
+    localStorage.setItem("token",res.data.token)
+
+ 
+const user =res
   if(user){
     alert('User Login Successfully')
     this.loginForm.reset()
@@ -36,7 +41,7 @@ login(){
   }
   
   },err=>{
-    alert("Something went wrong")
+    alert("Email or Password is incorrect")
   })
 
 
